@@ -1,5 +1,9 @@
-const { GraphQLServer } = require('graphql-yoga')
-const { Prisma } = require('prisma-binding')
+const {
+  GraphQLServer
+} = require('graphql-yoga')
+const {
+  Prisma
+} = require('prisma-binding')
 const Query = require('./resolvers/Query')
 const Mutation = require('./resolvers/Mutation')
 const Subscription = require('./resolvers/Subscription')
@@ -19,7 +23,7 @@ const server = new GraphQLServer({
     ...req,
     db: new Prisma({
       typeDefs: 'src/generated/prisma.graphql',
-      endpoint: '__PRISMA_ENDPOINT__',
+      endpoint: 'https://eu1.prisma.sh/public-vinebard-377/hackernews-graphql-js/dev',
       secret: 'mysecret123',
       debug: true
     }),
